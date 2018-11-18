@@ -1,0 +1,47 @@
+[gd_scene format=2]
+
+[node name="NecRomancer" type="Node" index="0"]
+
+[node name="MainUI" type="Control" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="MainDialogRichText" type="RichTextLabel" parent="MainUI" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 345.0
+margin_top = 552.0
+margin_right = 906.0
+margin_bottom = 657.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = true
+bbcode_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu pharetra tellus. Suspendisse tincidunt enim neque. Praesent tortor mauris, efficitur vel velit ut, imperdiet auctor nibh. Quisque tempus urna id erat tempus mattis. Quisque imperdiet, elit ornare finibus consequat, diam ligula tincidunt massa, non tincidunt magna lorem et dui. Donec leo mauris, posuere sit amet bibendum non, elementum at urna. Fusce nec est quis massa volutpat efficitur ut at lacus. Quisque molestie massa ex, quis volutpat magna porttitor ac. Pellentesque in ullamcorper ligula. Integer iaculis magna a libero suscipit vehicula. Maecenas leo odio, ultrices et volutpat sed, feugiat vitae erat. Maecenas est sem, luctus sit amet dictum sit amet, tincidunt vel nunc."
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu pharetra tellus. Suspendisse tincidunt enim neque. Praesent tortor mauris, efficitur vel velit ut, imperdiet auctor nibh. Quisque tempus urna id erat tempus mattis. Quisque imperdiet, elit ornare finibus consequat, diam ligula tincidunt massa, non tincidunt magna lorem et dui. Donec leo mauris, posuere sit amet bibendum non, elementum at urna. Fusce nec est quis massa volutpat efficitur ut at lacus. Quisque molestie massa ex, quis volutpat magna porttitor ac. Pellentesque in ullamcorper ligula. Integer iaculis magna a libero suscipit vehicula. Maecenas leo odio, ultrices et volutpat sed, feugiat vitae erat. Maecenas est sem, luctus sit amet dictum sit amet, tincidunt vel nunc."
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode" ]
+
+
