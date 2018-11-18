@@ -1,0 +1,127 @@
+{
+	"voices": [
+		{
+			"name": "Neutral",
+			"face": "",
+			"background_color": "#e3e3e3",
+			"text_color": "#1c1c1c"
+		},
+		{
+			"name": "Necromancer",
+			"face": "",
+			"background_color": "#1c1c1c",
+			"text_color": "#e3e3e3"
+		},
+		{
+			"name": "Lydia",
+			"face": "",
+			"background_color": "#e3e3e3",
+			"text_color": "#1c1c1c"
+		}
+	],
+	"passages": [
+		{
+			"label": "START",
+			"voice": "Neutral",
+			"override": "false",
+			"face": "",
+			"background_color": "#e3e3e3",
+			"text_color": "#1c1c1c",
+			"text": "Lorem ipsum dolor sit amet.",
+			"jump": "false",
+			"choices": "true",
+			"links": [
+				{
+					"label": "ipsum",
+					"text": "Small ipsum energy."
+				},
+				{
+					"label": "lorem",
+					"text": "Big Lorem energy."
+				}
+			]
+		},
+		{
+			"label": "ipsum",
+			"voice": "Neutral",
+			"override": "false",
+			"face": "",
+			"background_color": "#e3e3e3",
+			"text_color": "#1c1c1c",
+			"text": "You've chosen the path of ipsum.",
+			"jump": "true",
+			"choices": "true",
+			"links": [
+				{
+					"label": "dolor",
+					"text": ""
+				}
+			]
+		},
+		{
+			"label": "lorem",
+			"voice": "Neutral",
+			"override": "false",
+			"face": "",
+			"background_color": "#e3e3e3",
+			"text_color": "#1c1c1c",
+			"text": "You've chosen the path of Lorem.",
+			"jump": "true",
+			"choices": "true",
+			"links": [
+				{
+					"label": "dolor",
+					"text": ""
+				}
+			]
+		},
+		{
+			"label": "dolor",
+			"voice": "Neutral",
+			"override": "false",
+			"face": "",
+			"background_color": "#e3e3e3",
+			"text_color": "#1c1c1c",
+			"text": "Dolor sit amet!",
+			"jump": "false",
+			"choices": "true",
+			"links": []
+		},
+		{
+			"label": "",
+			"voice": "Neutral",
+			"override": "false",
+			"face": "",
+			"background_color": "#e3e3e3",
+			"text_color": "#1c1c1c",
+			"text": "And the day goes on.",
+			"jump": "false",
+			"choices": "true",
+			"links": []
+		},
+		{
+			"label": "",
+			"voice": "Neutral",
+			"override": "false",
+			"face": "",
+			"background_color": "#e3e3e3",
+			"text_color": "#1c1c1c",
+			"text": "And on.",
+			"jump": "false",
+			"choices": "true",
+			"links": []
+		},
+		{
+			"label": "",
+			"voice": "Neutral",
+			"override": "false",
+			"face": "",
+			"background_color": "#e3e3e3",
+			"text_color": "#1c1c1c",
+			"text": "Etcetera.",
+			"jump": "false",
+			"choices": "true",
+			"links": []
+		}
+	]
+}
