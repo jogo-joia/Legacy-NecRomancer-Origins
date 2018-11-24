@@ -1,0 +1,2122 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://NecRomEdit2/NecRomEdit2.gd" type="Script" id=1]
+[ext_resource path="res://DialogPanel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://faces/ph-face.png" type="Texture" id=3]
+[ext_resource path="res://pala.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="NecRomEditor" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Background" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.417969, 0.417969, 0.417969, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DialogPanel" parent="." index="1" instance=ExtResource( 2 )]
+
+margin_left = -410.0
+margin_top = -710.0
+margin_right = 630.0
+margin_bottom = -520.0
+
+[node name="SelectorPanel" type="Panel" parent="." index="2" groups=[
+"panels",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 210.0
+margin_right = 470.0
+margin_bottom = 710.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="SelectorPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 450.0
+margin_bottom = 490.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+split_offset = 0
+collapsed = false
+dragger_visibility = 0
+
+[node name="HSplitSelector" type="HSplitContainer" parent="SelectorPanel/VSplitContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 440.0
+margin_bottom = 234.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+split_offset = 0
+collapsed = false
+dragger_visibility = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="VBoxPassages" type="VBoxContainer" parent="SelectorPanel/VSplitContainer/HSplitSelector" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 214.0
+margin_bottom = 234.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBox" type="HBoxContainer" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxPassages" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="PassagesLabel" type="Label" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxPassages/HBox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 3.0
+margin_right = 68.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Passages"
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="AddPassageButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxPassages/HBox" index="1" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_right = 140.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Add Passage"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="RemovePassageButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxPassages/HBox" index="2" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Remove selected Passage"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Remove"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="PassageList" type="ItemList" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxPassages" index="1" groups=[
+"lists",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 214.0
+margin_bottom = 210.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+items = [  ]
+select_mode = 0
+allow_reselect = false
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBox2" type="HBoxContainer" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxPassages" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 214.0
+margin_right = 214.0
+margin_bottom = 234.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="PassageMoveUpButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxPassages/HBox2" index="0" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 105.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Move selected Passage up by one index."
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Up"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="PassageMoveDownButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxPassages/HBox2" index="1" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 109.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Move selected Passage down by one index."
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Down"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="VBoxVoices" type="VBoxContainer" parent="SelectorPanel/VSplitContainer/HSplitSelector" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 226.0
+margin_right = 440.0
+margin_bottom = 234.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBox" type="HBoxContainer" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxVoices" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="VoicesLabel" type="Label" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxVoices/HBox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 3.0
+margin_right = 68.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Voices"
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="AddVoiceButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxVoices/HBox" index="1" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_right = 140.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Add Voice"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="RemoveVoiceButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxVoices/HBox" index="2" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Remove selected Voice"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Remove"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="VoicesList" type="ItemList" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxVoices" index="1" groups=[
+"lists",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 214.0
+margin_bottom = 210.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+items = [  ]
+select_mode = 0
+allow_reselect = false
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBox2" type="HBoxContainer" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxVoices" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 214.0
+margin_right = 214.0
+margin_bottom = 234.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="VoiceMoveUpButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxVoices/HBox2" index="0" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 105.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Move selected Voice up by one index"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Up"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="VoiceMoveDownButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector/VBoxVoices/HBox2" index="1" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 109.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Move selected Voice down by one index"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Down"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="HSplitSelector2" type="HSplitContainer" parent="SelectorPanel/VSplitContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 246.0
+margin_right = 440.0
+margin_bottom = 480.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+split_offset = 0
+collapsed = false
+dragger_visibility = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="VBoxPassages" type="VBoxContainer" parent="SelectorPanel/VSplitContainer/HSplitSelector2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 214.0
+margin_bottom = 234.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBox" type="HBoxContainer" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxPassages" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="PassagesLabel" type="Label" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxPassages/HBox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 3.0
+margin_right = 68.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Actors"
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="AddPassageButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxPassages/HBox" index="1" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_right = 140.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Add Passage"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="RemovePassageButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxPassages/HBox" index="2" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Remove selected Passage"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Remove"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="PassageList" type="ItemList" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxPassages" index="1" groups=[
+"lists",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 214.0
+margin_bottom = 210.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+items = [  ]
+select_mode = 0
+allow_reselect = false
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBox2" type="HBoxContainer" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxPassages" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 214.0
+margin_right = 214.0
+margin_bottom = 234.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="PassageMoveUpButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxPassages/HBox2" index="0" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 105.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Move selected Passage up by one index."
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Up"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="PassageMoveDownButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxPassages/HBox2" index="1" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 109.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Move selected Passage down by one index."
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Down"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="VBoxVoices" type="VBoxContainer" parent="SelectorPanel/VSplitContainer/HSplitSelector2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 226.0
+margin_right = 440.0
+margin_bottom = 234.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBox" type="HBoxContainer" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxVoices" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="VoicesLabel" type="Label" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxVoices/HBox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 3.0
+margin_right = 68.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Stages"
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="AddVoiceButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxVoices/HBox" index="1" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_right = 140.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Add Voice"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="RemoveVoiceButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxVoices/HBox" index="2" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Remove selected Voice"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Remove"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="VoicesList" type="ItemList" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxVoices" index="1" groups=[
+"lists",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 214.0
+margin_bottom = 210.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+items = [  ]
+select_mode = 0
+allow_reselect = false
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBox2" type="HBoxContainer" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxVoices" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 214.0
+margin_right = 214.0
+margin_bottom = 234.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="VoiceMoveUpButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxVoices/HBox2" index="0" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 105.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Move selected Voice up by one index"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Up"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="VoiceMoveDownButton" type="Button" parent="SelectorPanel/VSplitContainer/HSplitSelector2/VBoxVoices/HBox2" index="1" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 109.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Move selected Voice down by one index"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Down"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="VoiceEditor" type="Panel" parent="." index="3" groups=[
+"panels",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 210.0
+margin_top = 770.0
+margin_right = 680.0
+margin_bottom = 960.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="VoiceFaceBackground" type="ColorRect" parent="VoiceEditor" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 180.0
+margin_bottom = 180.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="VoiceFaceTexture" type="TextureRect" parent="VoiceEditor/VoiceFaceBackground" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 170.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="VoiceRemoveFaceButton" type="Button" parent="VoiceEditor/VoiceFaceBackground" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_right = 170.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="VoiceNameLabel" type="Label" parent="VoiceEditor" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 320.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Voice Name"
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="VoiceNameEdit" type="LineEdit" parent="VoiceEditor" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 190.0
+margin_top = 30.0
+margin_right = 320.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "Neutral"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_text = "Neutral"
+placeholder_alpha = 0.6
+caret_blink = true
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Caret", "Placeholder" ]
+
+[node name="VoiceBgColorLabel" type="Label" parent="VoiceEditor" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 190.0
+margin_top = 70.0
+margin_right = 320.0
+margin_bottom = 90.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Background Color"
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="VoiceBgColorPicker" type="ColorPickerButton" parent="VoiceEditor" index="4" groups=[
+"colorpickers",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 190.0
+margin_top = 90.0
+margin_right = 320.0
+margin_bottom = 120.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+color = Color( 1, 1, 1, 1 )
+edit_alpha = true
+
+[node name="VoiceTextColorLabel" type="Label" parent="VoiceEditor" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 330.0
+margin_top = 70.0
+margin_right = 460.0
+margin_bottom = 90.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Text Color"
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="VoiceTextColorPicker" type="ColorPickerButton" parent="VoiceEditor" index="6" groups=[
+"colorpickers",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 330.0
+margin_top = 90.0
+margin_right = 460.0
+margin_bottom = 120.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+color = Color( 1, 1, 1, 1 )
+edit_alpha = true
+
+[node name="VoiceBgColorPreview" type="ColorRect" parent="VoiceEditor" index="7" groups=[
+"previewbackground",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 190.0
+margin_top = 130.0
+margin_right = 460.0
+margin_bottom = 180.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.890196, 0.890196, 0.890196, 1 )
+
+[node name="VoiceTextColorPreview" type="RichTextLabel" parent="VoiceEditor" index="8" groups=[
+"previewtexts",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 210.0
+margin_top = 140.0
+margin_right = 450.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.109804, 0.109804, 0.109804, 1 )
+bbcode_enabled = true
+bbcode_text = "Preview text"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Preview text"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="VoiceSaveButton" type="Button" parent="VoiceEditor" index="9" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 330.0
+margin_top = 10.0
+margin_right = 460.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Save"
+flat = false
+align = 1
+
+[node name="VoiceUndoButton" type="Button" parent="VoiceEditor" index="10" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 330.0
+margin_top = 40.0
+margin_right = 460.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Undo Changes"
+flat = false
+align = 1
+
+[node name="PassageEditor" type="Panel" parent="." index="4" groups=[
+"panels",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 480.0
+margin_top = 210.0
+margin_right = 1270.0
+margin_bottom = 460.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="PassageFaceBackground" type="ColorRect" parent="PassageEditor" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 180.0
+margin_bottom = 180.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="PassageFaceTexture" type="TextureRect" parent="PassageEditor/PassageFaceBackground" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 170.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+_sections_unfolded = [ "Rect" ]
+
+[node name="PassageRemoveFaceButton" type="Button" parent="PassageEditor/PassageFaceBackground" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_right = 170.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="LabelLabel" type="Label" parent="PassageEditor" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 320.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Label"
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="LabelEdit" type="LineEdit" parent="PassageEditor" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 190.0
+margin_top = 30.0
+margin_right = 320.0
+margin_bottom = 54.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Placeholder" ]
+
+[node name="VoiceLabel" type="Label" parent="PassageEditor" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 330.0
+margin_top = 10.0
+margin_right = 460.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Voice"
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="VoiceEdit" type="LineEdit" parent="PassageEditor" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 330.0
+margin_top = 30.0
+margin_right = 460.0
+margin_bottom = 54.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "Neutral"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_text = "Neutral"
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Placeholder" ]
+
+[node name="OverrideCheck" type="CheckButton" parent="PassageEditor" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 460.0
+margin_top = 20.0
+margin_right = 600.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Override"
+flat = false
+align = 0
+
+[node name="BgColorLabel" type="Label" parent="PassageEditor" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 750.0
+margin_top = 40.0
+margin_right = 880.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Background Color"
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="BgColorPicker" type="ColorPickerButton" parent="PassageEditor" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 750.0
+margin_top = 60.0
+margin_right = 880.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+color = Color( 1, 1, 1, 1 )
+edit_alpha = true
+
+[node name="TextColorLabel" type="Label" parent="PassageEditor" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 750.0
+margin_top = 80.0
+margin_right = 880.0
+margin_bottom = 100.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Text Color"
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TextColorPicker" type="ColorPickerButton" parent="PassageEditor" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 750.0
+margin_top = 100.0
+margin_right = 880.0
+margin_bottom = 120.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+color = Color( 1, 1, 1, 1 )
+edit_alpha = true
+
+[node name="TextEdit" type="TextEdit" parent="PassageEditor" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 190.0
+margin_top = 80.0
+margin_right = 730.0
+margin_bottom = 180.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+readonly = false
+highlight_current_line = true
+syntax_highlighting = false
+show_line_numbers = true
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = true
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+_sections_unfolded = [ "Caret" ]
+
+[node name="PassageSaveButton" type="Button" parent="PassageEditor" index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 890.0
+margin_top = 20.0
+margin_right = 1040.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Save"
+flat = false
+align = 1
+
+[node name="PassageUndoButton" type="Button" parent="PassageEditor" index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 890.0
+margin_top = 90.0
+margin_right = 1040.0
+margin_bottom = 120.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Undo Changes"
+flat = false
+align = 1
+
+[node name="PassageBgColorPreview" type="ColorRect" parent="PassageEditor" index="13"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 190.0
+margin_right = 340.0
+margin_bottom = 240.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.890196, 0.890196, 0.890196, 1 )
+
+[node name="PassageTextColorPreview" type="RichTextLabel" parent="PassageEditor" index="14"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 30.0
+margin_top = 200.0
+margin_right = 270.0
+margin_bottom = 230.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.109804, 0.109804, 0.109804, 1 )
+bbcode_enabled = true
+bbcode_text = "Preview text"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Preview text"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="ChoicesEditor" type="Panel" parent="PassageEditor" index="15"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 260.0
+margin_right = 790.0
+margin_bottom = 500.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ChoicesList" type="ItemList" parent="PassageEditor/ChoicesEditor" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 40.0
+margin_right = 220.0
+margin_bottom = 230.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+items = [  ]
+select_mode = 0
+allow_reselect = false
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+
+[node name="AddChoiceButton" type="Button" parent="PassageEditor/ChoicesEditor" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 70.0
+margin_top = 10.0
+margin_right = 140.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add"
+flat = false
+align = 1
+
+[node name="RemoveChoiceButton" type="Button" parent="PassageEditor/ChoicesEditor" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 10.0
+margin_right = 220.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Remove"
+flat = false
+align = 1
+
+[node name="ChoiceLabelLabel" type="Label" parent="PassageEditor/ChoicesEditor" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 230.0
+margin_top = 100.0
+margin_right = 360.0
+margin_bottom = 120.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Tag Type"
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ChoiceLabelLabel2" type="Label" parent="PassageEditor/ChoicesEditor" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 60.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Tags"
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ChoiceLabelEdit" type="LineEdit" parent="PassageEditor/ChoicesEditor" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 230.0
+margin_top = 120.0
+margin_right = 560.0
+margin_bottom = 150.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Placeholder" ]
+
+[node name="ChoiceTextLabel" type="Label" parent="PassageEditor/ChoicesEditor" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 230.0
+margin_top = 10.0
+margin_right = 360.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Choice Text"
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ChoiceTextEdit" type="LineEdit" parent="PassageEditor/ChoicesEditor" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 230.0
+margin_top = 30.0
+margin_right = 560.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Placeholder" ]
+
+[node name="ChoiceSaveButton" type="Button" parent="PassageEditor/ChoicesEditor" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 230.0
+margin_top = 70.0
+margin_right = 390.0
+margin_bottom = 90.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Save Choice"
+flat = false
+align = 1
+
+[node name="ChoiceUndoButton" type="Button" parent="PassageEditor/ChoicesEditor" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 400.0
+margin_top = 70.0
+margin_right = 560.0
+margin_bottom = 90.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Undo Changes"
+flat = false
+align = 1
+
+[node name="FileDialog" type="FileDialog" parent="." index="5"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 250.0
+margin_right = 380.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 200, 70 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = false
+window_title = "Open a File"
+resizable = false
+dialog_hide_on_ok = false
+mode_overrides_title = true
+mode = 0
+access = 0
+filters = PoolStringArray(  )
+show_hidden_files = false
+current_dir = "res://"
+current_file = ""
+current_path = "res://"
+_sections_unfolded = [ "Dialog" ]
+
+[node name="JsonPanel" type="Panel" parent="." index="6" groups=[
+"panels",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 220.0
+margin_bottom = 200.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="WriteJsonButton" type="Button" parent="JsonPanel" index="0" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 200.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Write current story state to JSON file."
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Write JSON"
+flat = false
+align = 1
+_sections_unfolded = [ "Hint" ]
+
+[node name="ReadJsonButton" type="Button" parent="JsonPanel" index="1" groups=[
+"buttons",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 50.0
+margin_right = 200.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Read story state from JSON file"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Read JSON"
+flat = false
+align = 1
+_sections_unfolded = [ "Hint" ]
+
+

@@ -13,7 +13,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="NecRomEditor" type="Control" index="0"]
+[node name="NecRomEditor" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -26,6 +26,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="Background" type="ColorRect" parent="." index="0"]
 
@@ -43,8 +46,8 @@ color = Color( 0.417969, 0.417969, 0.417969, 1 )
 
 [node name="DialogPanel" parent="." index="1" instance=ExtResource( 2 )]
 
-margin_top = -700.0
-margin_bottom = -490.0
+margin_top = -710.0
+margin_bottom = -500.0
 
 [node name="SelectorPanel" type="Panel" parent="." index="2"]
 
@@ -52,10 +55,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 20.0
-margin_top = 250.0
-margin_right = 480.0
-margin_bottom = 460.0
+margin_left = 230.0
+margin_top = 230.0
+margin_right = 690.0
+margin_bottom = 470.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -90,7 +93,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 214.0
-margin_bottom = 190.0
+margin_bottom = 220.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -100,25 +103,97 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="PassagesLabel" type="Label" parent="SelectorPanel/HSplitSelector/VBoxPassages" index="0"]
+[node name="HBox" type="HBoxContainer" parent="SelectorPanel/HSplitSelector/VBoxPassages" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 214.0
-margin_bottom = 14.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="PassagesLabel" type="Label" parent="SelectorPanel/HSplitSelector/VBoxPassages/HBox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 3.0
+margin_right = 68.0
+margin_bottom = 17.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
+size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "Passages"
 clip_text = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="AddPassageButton" type="Button" parent="SelectorPanel/HSplitSelector/VBoxPassages/HBox" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_right = 140.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Add Passage"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="RemovePassageButton" type="Button" parent="SelectorPanel/HSplitSelector/VBoxPassages/HBox" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Remove selected Passage"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Remove"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
 
 [node name="PassageList" type="ItemList" parent="SelectorPanel/HSplitSelector/VBoxPassages" index="1"]
 
@@ -126,9 +201,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 18.0
+margin_top = 24.0
 margin_right = 214.0
-margin_bottom = 190.0
+margin_bottom = 196.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 focus_mode = 2
@@ -142,6 +217,76 @@ allow_reselect = false
 icon_mode = 1
 fixed_icon_size = Vector2( 0, 0 )
 _sections_unfolded = [ "Size Flags" ]
+
+[node name="HBox2" type="HBoxContainer" parent="SelectorPanel/HSplitSelector/VBoxPassages" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 200.0
+margin_right = 214.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="PassageMoveUpButton" type="Button" parent="SelectorPanel/HSplitSelector/VBoxPassages/HBox2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 105.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Move selected Passage up by one index."
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Up"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="PassageMoveDownButton" type="Button" parent="SelectorPanel/HSplitSelector/VBoxPassages/HBox2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 109.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Move selected Passage down by one index."
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Down"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
 
 [node name="VBoxVoices" type="VBoxContainer" parent="SelectorPanel/HSplitSelector" index="1"]
 
@@ -151,7 +296,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 226.0
 margin_right = 440.0
-margin_bottom = 190.0
+margin_bottom = 220.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -161,25 +306,97 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="VoicesLabel" type="Label" parent="SelectorPanel/HSplitSelector/VBoxVoices" index="0"]
+[node name="HBox" type="HBoxContainer" parent="SelectorPanel/HSplitSelector/VBoxVoices" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 214.0
-margin_bottom = 14.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="VoicesLabel" type="Label" parent="SelectorPanel/HSplitSelector/VBoxVoices/HBox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 3.0
+margin_right = 68.0
+margin_bottom = 17.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
+size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "Voices"
 clip_text = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="AddVoiceButton" type="Button" parent="SelectorPanel/HSplitSelector/VBoxVoices/HBox" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_right = 140.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Add Voice"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="RemoveVoiceButton" type="Button" parent="SelectorPanel/HSplitSelector/VBoxVoices/HBox" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Remove selected Voice"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Remove"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
 
 [node name="VoicesList" type="ItemList" parent="SelectorPanel/HSplitSelector/VBoxVoices" index="1"]
 
@@ -187,9 +404,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 18.0
+margin_top = 24.0
 margin_right = 214.0
-margin_bottom = 190.0
+margin_bottom = 196.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 focus_mode = 2
@@ -204,16 +421,86 @@ icon_mode = 1
 fixed_icon_size = Vector2( 0, 0 )
 _sections_unfolded = [ "Size Flags" ]
 
+[node name="HBox2" type="HBoxContainer" parent="SelectorPanel/HSplitSelector/VBoxVoices" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 200.0
+margin_right = 214.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="VoiceMoveUpButton" type="Button" parent="SelectorPanel/HSplitSelector/VBoxVoices/HBox2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 105.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Move selected Voice up by one index"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Up"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
+[node name="VoiceMoveDownButton" type="Button" parent="SelectorPanel/HSplitSelector/VBoxVoices/HBox2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 109.0
+margin_right = 214.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Move selected Voice down by one index"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Down"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Hint", "Size Flags" ]
+
 [node name="VoiceEditor" type="Panel" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 490.0
-margin_top = 250.0
-margin_right = 1060.0
-margin_bottom = 460.0
+margin_left = 700.0
+margin_top = 230.0
+margin_right = 1170.0
+margin_bottom = 470.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -221,16 +508,16 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="FaceBackground" type="ColorRect" parent="VoiceEditor" index="0"]
+[node name="VoiceFaceBackground" type="ColorRect" parent="VoiceEditor" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 190.0
-margin_bottom = 190.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 180.0
+margin_bottom = 180.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -240,7 +527,7 @@ size_flags_vertical = 1
 color = Color( 1, 1, 1, 1 )
 _sections_unfolded = [ "Rect" ]
 
-[node name="FaceTexture" type="TextureRect" parent="VoiceEditor/FaceBackground" index="0"]
+[node name="VoiceFaceTexture" type="TextureRect" parent="VoiceEditor/VoiceFaceBackground" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -258,7 +545,7 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
-[node name="RemoveFaceButton" type="Button" parent="VoiceEditor/FaceBackground" index="1"]
+[node name="VoiceRemoveFaceButton" type="Button" parent="VoiceEditor/VoiceFaceBackground" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -288,10 +575,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 210.0
-margin_top = 20.0
-margin_right = 340.0
-margin_bottom = 40.0
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 320.0
+margin_bottom = 30.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -310,10 +597,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 210.0
-margin_top = 40.0
-margin_right = 340.0
-margin_bottom = 70.0
+margin_left = 190.0
+margin_top = 30.0
+margin_right = 320.0
+margin_bottom = 60.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -337,10 +624,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 210.0
-margin_top = 80.0
-margin_right = 340.0
-margin_bottom = 100.0
+margin_left = 190.0
+margin_top = 70.0
+margin_right = 320.0
+margin_bottom = 90.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -359,10 +646,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 210.0
-margin_top = 100.0
-margin_right = 340.0
-margin_bottom = 130.0
+margin_left = 190.0
+margin_top = 90.0
+margin_right = 320.0
+margin_bottom = 120.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -385,10 +672,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 360.0
-margin_top = 80.0
-margin_right = 490.0
-margin_bottom = 100.0
+margin_left = 330.0
+margin_top = 70.0
+margin_right = 460.0
+margin_bottom = 90.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -407,10 +694,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 360.0
-margin_top = 100.0
-margin_right = 490.0
-margin_bottom = 130.0
+margin_left = 330.0
+margin_top = 90.0
+margin_right = 460.0
+margin_bottom = 120.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -433,10 +720,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 210.0
-margin_top = 140.0
-margin_right = 490.0
-margin_bottom = 190.0
+margin_left = 190.0
+margin_top = 130.0
+margin_right = 460.0
+margin_bottom = 180.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -451,10 +738,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 230.0
-margin_top = 150.0
-margin_right = 470.0
-margin_bottom = 180.0
+margin_left = 210.0
+margin_top = 140.0
+margin_right = 450.0
+margin_bottom = 170.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -464,17 +751,67 @@ size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.109804, 0.109804, 0.109804, 1 )
 bbcode_enabled = true
-bbcode_text = "Preview"
+bbcode_text = "Preview text"
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "Preview"
+text = "Preview text"
 scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "BBCode", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="VoiceSaveButton" type="Button" parent="VoiceEditor" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 330.0
+margin_top = 10.0
+margin_right = 460.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Save"
+flat = false
+align = 1
+
+[node name="VoiceUndoButton" type="Button" parent="VoiceEditor" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 330.0
+margin_top = 40.0
+margin_right = 460.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Undo Changes"
+flat = false
+align = 1
 
 [node name="PassageEditor" type="Panel" parent="." index="4"]
 
@@ -482,10 +819,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 20.0
-margin_top = 470.0
-margin_right = 1060.0
-margin_bottom = 700.0
+margin_left = 110.0
+margin_top = 480.0
+margin_right = 1170.0
+margin_bottom = 710.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -493,7 +830,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="FaceBackground" type="ColorRect" parent="PassageEditor" index="0"]
+[node name="PassageFaceBackground" type="ColorRect" parent="PassageEditor" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -511,7 +848,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 1, 1, 1, 1 )
 
-[node name="FaceTexture" type="TextureRect" parent="PassageEditor/FaceBackground" index="0"]
+[node name="PassageFaceTexture" type="TextureRect" parent="PassageEditor/PassageFaceBackground" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -529,7 +866,7 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
-[node name="RemoveFaceButton" type="Button" parent="PassageEditor/FaceBackground" index="1"]
+[node name="PassageRemoveFaceButton" type="Button" parent="PassageEditor/PassageFaceBackground" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -985,7 +1322,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 720.0
 margin_top = 30.0
-margin_right = 1030.0
+margin_right = 1050.0
 margin_bottom = 60.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1009,9 +1346,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 720.0
-margin_top = 70.0
+margin_top = 60.0
 margin_right = 850.0
-margin_bottom = 90.0
+margin_bottom = 80.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -1031,9 +1368,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 720.0
-margin_top = 90.0
-margin_right = 1030.0
-margin_bottom = 120.0
+margin_top = 80.0
+margin_right = 1050.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -1049,18 +1386,168 @@ caret_blink_speed = 0.65
 caret_position = 0
 _sections_unfolded = [ "Placeholder" ]
 
-[node name="filler" type="Label" parent="PassageEditor" index="21"]
+[node name="ChoiceSaveButton" type="Button" parent="PassageEditor" index="21"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 790.0
-margin_top = 160.0
-margin_right = 990.0
-margin_bottom = 180.0
+margin_left = 720.0
+margin_top = 120.0
+margin_right = 880.0
+margin_bottom = 140.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Save Choice"
+flat = false
+align = 1
+
+[node name="ChoiceUndoButton" type="Button" parent="PassageEditor" index="22"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 890.0
+margin_top = 120.0
+margin_right = 1050.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Undo Changes"
+flat = false
+align = 1
+
+[node name="PassageSaveButton" type="Button" parent="PassageEditor" index="23"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 400.0
+margin_top = 10.0
+margin_right = 550.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Save"
+flat = false
+align = 1
+
+[node name="PassageUndoButton" type="Button" parent="PassageEditor" index="24"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 400.0
+margin_top = 80.0
+margin_right = 550.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Undo Changes"
+flat = false
+align = 1
+
+[node name="PassageBgColorPreview" type="ColorRect" parent="PassageEditor" index="25"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 720.0
+margin_top = 150.0
+margin_right = 1050.0
+margin_bottom = 200.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.890196, 0.890196, 0.890196, 1 )
+
+[node name="PassageTextColorPreview" type="RichTextLabel" parent="PassageEditor" index="26"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 740.0
+margin_top = 160.0
+margin_right = 980.0
+margin_bottom = 190.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.109804, 0.109804, 0.109804, 1 )
+bbcode_enabled = true
+bbcode_text = "Preview text"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Preview text"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="filler" type="Label" parent="PassageEditor" index="27"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 780.0
+margin_top = 200.0
+margin_right = 980.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Don't ask."
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -1070,6 +1557,7 @@ valign = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Hint" ]
 
 [node name="FileDialog" type="FileDialog" parent="." index="5"]
 
@@ -1102,5 +1590,77 @@ current_dir = "res://"
 current_file = ""
 current_path = "res://"
 _sections_unfolded = [ "Dialog" ]
+
+[node name="JsonPanel" type="Panel" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 110.0
+margin_top = 230.0
+margin_right = 220.0
+margin_bottom = 470.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="WriteJsonButton" type="Button" parent="JsonPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 100.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Write current story state to JSON file."
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Write JSON"
+flat = false
+align = 1
+_sections_unfolded = [ "Hint" ]
+
+[node name="ReadJsonButton" type="Button" parent="JsonPanel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 50.0
+margin_right = 100.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Read story state from JSON file"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Read JSON"
+flat = false
+align = 1
+_sections_unfolded = [ "Hint" ]
 
 

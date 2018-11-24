@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://NecRomancer.gd" type="Script" id=1]
-[ext_resource path="res://backgrounds/ph-bg.png" type="Texture" id=2]
+[ext_resource path="res://backgrounds/teste grande.png" type="Texture" id=2]
 [ext_resource path="res://sprites/placeholder-character.png" type="Texture" id=3]
 [ext_resource path="res://DialogPanel.tscn" type="PackedScene" id=4]
 
-[node name="NecRomancer" type="Control"]
+[node name="NecRomancer" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -50,6 +50,7 @@ stretch_mode = 7
 
 [node name="CharacterSprite" type="TextureRect" parent="Stage" index="1"]
 
+visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -79,7 +80,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
 
 [node name="DialogPanel" parent="MainUI" index="0" instance=ExtResource( 4 )]
+
+margin_top = -210.0
+margin_bottom = -20.0
 
 
