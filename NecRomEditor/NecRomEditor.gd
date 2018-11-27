@@ -80,6 +80,8 @@ func connect_lists():
 	PassageList.connect("item_selected", self, "_on_PassageList_item_selected")
 	VoiceList.connect("item_selected", self, "_on_VoiceList_item_selected")
 	ChoicesList.connect("item_selected", self, "_on_ChoicesList_item_selected")
+	AddPassageButton.connect("pressed", self, "_on_AddPassageButton_pressed")
+	RemovePassageButton.connect("pressed", self, "_on_RemovePassageButton_pressed")
 
 func connect_voice():
 	VoiceSaveButton.connect("pressed", self, "save_voice")
@@ -102,6 +104,32 @@ func connect_passage():
 	ChoicesCheck.connect("toggled", self, "_on_passage_changed")
 	ChoiceLabelEdit.connect("text_changed", self, "_on_passage_changed")
 	ChoiceTextEdit.connect("text_changed", self, "_on_passage_changed")
+	
+func _on_AddPassageButton_pressed(target = null):
+	add_passage()
+
+func _on_RemovePassageButton_pressed(target = null):
+	remove_passage()
+	
+func add_passage():
+	var passage = {
+		"background_color": "ffe3e3e3",
+		"choices": "0",
+		"face": "res://faces/ph-face.png",
+		"jump": "0",
+		"label": "",
+		"links": [],
+		"override": "0",
+		"text": "",
+		"text_color": "ff1c1c1c",
+		"voice": "Neutral"
+	}
+	story["passages"].append(passage)
+	populate_passages()
+
+func remove_passage(index = story_index):
+	story["passages"].remove(index)
+	populate_passages()
 
 func add_choice(index = story_index):
 	var choice = {
@@ -140,11 +168,12 @@ func _on_passage_changed(value = null):
 	var passage = story["passages"][story_index]
 	var snippet = TextEdit.text
 	var new_name = ""
-	if LabelEdit.text == "":
+	if VoiceEdit.text == "":
 		new_name = "[{0}] \"{1}\"".format([story_index, snippet])
 	else:
 		var item_label = LabelEdit.text
-		new_name = "[{0}] [{1}] \"{2}\"".format([story_index, item_label, snippet])
+		var item_voice = VoiceEdit.text
+		new_name = "[{0}] [{1}] \"{2}\"".format([story_index, item_voice, snippet])
 	PassageList.set_item_text(story_index, new_name)
 	PassageFaceBackground.color = BgColorPicker.color.to_html()
 	PassageBgColorPreview.color = BgColorPicker.color.to_html()
@@ -249,11 +278,12 @@ func populate_passages():
 	for index in story["passages"].size():
 		var snippet = story["passages"][index]["text"]
 		var item_title = ""
-		if story["passages"][index]["label"] == "":
+		if story["passages"][index]["voice"] == "":
 			item_title = "[{0}] \"{1}\"".format([index, snippet])
 		else:
 			var item_label = story["passages"][index]["label"]
-			item_title = "[{0}] [{1}] \"{2}\"".format([index, item_label, snippet])
+			var item_voice = story["passages"][index]["voice"]
+			item_title = "[{0}] [{1}] \"{2}\"".format([index, item_voice, snippet])
 		PassageList.add_item(item_title)
 
 func populate_voices():

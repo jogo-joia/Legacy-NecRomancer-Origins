@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://NecRomancer.gd" type="Script" id=1]
-[ext_resource path="res://backgrounds/teste grande.png" type="Texture" id=2]
-[ext_resource path="res://sprites/placeholder-character.png" type="Texture" id=3]
+[ext_resource path="res://backgrounds/c00.png" type="Texture" id=2]
+[ext_resource path="res://CharacterSprite.tscn" type="PackedScene" id=3]
 [ext_resource path="res://DialogPanel.tscn" type="PackedScene" id=4]
 
-[node name="NecRomancer" type="Control" index="0"]
+[node name="NecRomancer" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -18,6 +18,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Rect" ]
 
 [node name="Stage" type="Control" parent="." index="0"]
 
@@ -48,24 +49,104 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 7
 
-[node name="CharacterSprite" type="TextureRect" parent="Stage" index="1"]
+[node name="CharacterSprite" parent="Stage" index="1" instance=ExtResource( 3 )]
 
 visible = false
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -180.0
-margin_top = -720.0
-margin_right = 180.0
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="MarkA" type="ColorRect" parent="Stage" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_top = 720.0
+margin_right = 256.0
+margin_bottom = 750.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
-stretch_mode = 0
+color = Color( 1, 1, 1, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="MarkB" type="ColorRect" parent="Stage" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 256.0
+margin_top = 720.0
+margin_right = 512.0
+margin_bottom = 750.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.726563, 0.24408, 0.24408, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="MarkC" type="ColorRect" parent="Stage" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 512.0
+margin_top = 720.0
+margin_right = 768.0
+margin_bottom = 750.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.271606, 0.27957, 0.78125, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="MarkD" type="ColorRect" parent="Stage" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 768.0
+margin_top = 720.0
+margin_right = 1024.0
+margin_bottom = 750.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.768612, 0.8125, 0.250732, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="MarkE" type="ColorRect" parent="Stage" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1024.0
+margin_top = 720.0
+margin_right = 1216.0
+margin_bottom = 750.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.0898438, 0.0898438, 0.0898438, 1 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="MainUI" type="Control" parent="." index="1"]
@@ -86,5 +167,6 @@ _sections_unfolded = [ "Rect" ]
 
 margin_top = -210.0
 margin_bottom = -20.0
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 
