@@ -2,6 +2,10 @@ extends Control
 
 onready var story = DataParser.load_data("res://NecRomancer.json")
 
+# var stringer = "hello my gell-o"
+
+var arrayson = ["hey", "hello", "howdy"]
+
 var story_index = 0
 
 func _ready():
@@ -64,7 +68,7 @@ func print_story():
 		10:
 			stage_enter("Blacksmith", "Left", "B")
 		12:
-			stage_enter("Lydia", "Left", "B")
+			stage_enter("Lydia", "Left", "A")
 		18:
 			stage_move("Necromancer", "C")
 			stage_move("Lydia", "B")
@@ -467,40 +471,43 @@ func stage_move(character, mark):
 						var tween = sprite.get_node("Tween")
 						tween.interpolate_property(sprite, "rect_position",
 												sprite.rect_position,
-												Vector2(MarkA.rect_position.x - MarkA.rect_size.x / 2, 0), 0.5,
+												Vector2(MarkA.rect_position.x, 0), 0.5,
 												Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 						tween.start()
 					"B":
 						var tween = sprite.get_node("Tween")
 						tween.interpolate_property(sprite, "rect_position",
 												sprite.rect_position,
-												Vector2(MarkB.rect_position.x - MarkB.rect_size.x / 2, 0), 0.5,
+												Vector2(MarkB.rect_position.x, 0), 0.5,
 												Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 						tween.start()
 					"C":
 						var tween = sprite.get_node("Tween")
 						tween.interpolate_property(sprite, "rect_position",
 												sprite.rect_position,
-												Vector2(MarkC.rect_position.x - MarkC.rect_size.x / 2, 0), 0.5,
+												Vector2(MarkC.rect_position.x, 0), 0.5,
 												Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 						tween.start()
 					"D":
 						var tween = sprite.get_node("Tween")
 						tween.interpolate_property(sprite, "rect_position",
 												sprite.rect_position,
-												Vector2(MarkD.rect_position.x - MarkD.rect_size.x / 2, 0), 0.5,
+												Vector2(MarkD.rect_position.x, 0), 0.5,
 												Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 						tween.start()
 					"E":
 						var tween = sprite.get_node("Tween")
 						tween.interpolate_property(sprite, "rect_position",
 												sprite.rect_position,
-												Vector2(MarkE.rect_position.x - MarkE.rect_size.x / 2, 0), 0.5,
+												Vector2(MarkE.rect_position.x, 0), 0.5,
 												Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 						tween.start()
 	
 func stage_exit(character, origin):
 	for sprite in get_node("Stage").get_children():
+		var wr = weakref(sprite)
+		if (!wr.get_ref()):
+			return
 		if sprite.is_in_group("characters"):
 			if sprite.char_name == character:
 				match origin:
@@ -525,6 +532,8 @@ func stage_exit(character, origin):
 												Vector2(sprite.rect_position.x, sprite.rect_size.y + 1), 0.5,
 												Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 						tween.start()
+				yield(get_tree().create_timer(0.55), "timeout")
+				sprite.queue_free()
 
 func stage_enter(character, origin, mark):
 	var new_char = CharSprite.instance()
@@ -541,15 +550,15 @@ func stage_enter(character, origin, mark):
 			var mark_position_x = 0
 			match mark:
 				"A":
-					mark_position_x = MarkA.rect_position.x - MarkA.rect_size.x / 2
+					mark_position_x = MarkA.rect_position.x
 				"B":
-					mark_position_x = MarkB.rect_position.x - MarkB.rect_size.x / 2
+					mark_position_x = MarkB.rect_position.x
 				"C":
-					mark_position_x = MarkC.rect_position.x - MarkC.rect_size.x / 2
+					mark_position_x = MarkC.rect_position.x
 				"D":
-					mark_position_x = MarkD.rect_position.x - MarkD.rect_size.x / 2
+					mark_position_x = MarkD.rect_position.x
 				"E":
-					mark_position_x = MarkE.rect_position.x - MarkE.rect_size.x / 2
+					mark_position_x = MarkE.rect_position.x
 			new_char.rect_position.x = mark_position_x
 			new_char.rect_position.y = MarkA.rect_position.y
 	new_char.visible = true
@@ -558,34 +567,34 @@ func stage_enter(character, origin, mark):
 			var tween = new_char.get_node("Tween")
 			tween.interpolate_property(new_char, "rect_position",
 									new_char.rect_position,
-									Vector2(MarkA.rect_position.x - MarkA.rect_size.x / 2, 0), 0.5,
+									Vector2(MarkA.rect_position.x, 0), 0.5,
 									Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			tween.start()
 		"B":
 			var tween = new_char.get_node("Tween")
 			tween.interpolate_property(new_char, "rect_position",
 									new_char.rect_position,
-									Vector2(MarkB.rect_position.x - MarkB.rect_size.x / 2, 0), 0.5,
+									Vector2(MarkB.rect_position.x, 0), 0.5,
 									Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			tween.start()
 		"C":
 			var tween = new_char.get_node("Tween")
 			tween.interpolate_property(new_char, "rect_position",
 									new_char.rect_position,
-									Vector2(MarkC.rect_position.x - MarkC.rect_size.x / 2, 0), 0.5,
+									Vector2(MarkC.rect_position.x, 0), 0.5,
 									Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			tween.start()
 		"D":
 			var tween = new_char.get_node("Tween")
 			tween.interpolate_property(new_char, "rect_position",
 									new_char.rect_position,
-									Vector2(MarkD.rect_position.x - MarkD.rect_size.x / 2, 0), 0.5,
+									Vector2(MarkD.rect_position.x, 0), 0.5,
 									Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			tween.start()
 		"E":
 			var tween = new_char.get_node("Tween")
 			tween.interpolate_property(new_char, "rect_position",
 									new_char.rect_position,
-									Vector2(MarkE.rect_position.x - MarkE.rect_size.x / 2, 0), 0.5,
+									Vector2(MarkE.rect_position.x, 0), 0.5,
 									Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			tween.start()
